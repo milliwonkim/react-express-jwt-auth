@@ -1,0 +1,18 @@
+{
+  "name": "react-auth",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "kiwon kim",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^7.4.0"
+  },
+  "scripts": {
+    "client": "cd client && npx kill-port 3000 && yarn start",
+    "backend": "cd backend && npx kill-port 5000 && yarn server",
+    "install:client": "cd client && rm -rf node_modules yarn.lock && yarn install",
+    "install:backend": "cd backend && rm -rf node_modules yarn.lock && yarn install",
+    "install:all": "concurrently \"yarn install:client\" \"yarn install:backend\"",
+    "dev": "concurrently \"yarn client\" \"yarn backend\""
+  }
+}
